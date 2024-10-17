@@ -1,0 +1,62 @@
+/* Styling untuk body */
+body {
+    background-color: #e0f7fa; /* Background soft pastel biru muda */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #333333; /* Warna teks gelap untuk kontras */
+}
+
+/* Styling untuk container pemilihan aplikasi */
+.app-selection {
+    text-align: center;
+    background-color: #111827; /* Background warna sesuai gambar (#111827) */
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1); /* Shadow lembut */
+}
+
+/* Styling judul */
+.app-selection h1 {
+    margin-bottom: 20px;
+    font-size: 32px;
+    color: #ffffff; /* Warna teks putih agar kontras dengan background */
+}
+
+/* Styling tombol */
+.buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.app-button {
+    text-decoration: none;
+    background-color: #4fc3f7; /* Tombol biru muda sesuai tema */
+    color: #ffffff;
+    padding: 15px 25px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Shadow lembut */
+    position: relative;
+    overflow: hidden;
+}
+
+.app-button:hover {
+    background-color: #ff69b4; /* Pink lembut saat di-hover */
+    transform: translateY(-2px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3); /* Shadow lebih kuat saat di-hover */
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
