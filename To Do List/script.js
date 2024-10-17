@@ -1,79 +1,21 @@
-const todoList = document.getElementById('todo-list');
-const historyList = document.getElementById('history-list');
-let todos = [];
-let history = [];
+// Add task function
+document.getElementById('add-task').addEventListener('click', function () {
+    let taskText = document.getElementById('new-task').value;
 
-function addTodo() {
-    const input = document.getElementById('todo-input');
-    const task = input.value.trim();
-    
-    if (task !== "") {
-        todos.push(task);
-        input.value = '';
-        renderTodos();
+    if (taskText.trim() !== '') {
+        let li = document.createElement('li');
+        li.innerHTML = `${taskText} <button class="delete-task">x</button>`;
+        document.getElementById('task-list').appendChild(li);
+        document.getElementById('new-task').value = '';
+
+        // Delete task functionality
+        li.querySelector('.delete-task').addEventListener('click', function () {
+            li.remove();
+        });
     }
-}
+});
 
-function deleteTodo(index) {
-    const deletedTask = todos[index];
-    todos.splice(index, 1);
-    history.push(deletedTask);  // Add deleted task to history
-    renderTodos();
-    renderHistory();
-}
-
-function editTodo(index) {
-    const newTask = prompt("Edit your task:", todos[index]);
-    
-    if (newTask !== null && newTask.trim() !== "") {
-        todos[index] = newTask;
-        renderTodos();
-    }
-}
-
-function renderTodos() {
-    todoList.innerHTML = '';
-    
-    todos.forEach((todo, index) => {
-        const li = document.createElement('li');
-        const span = document.createElement('span');
-        span.textContent = todo;
-        
-        const editButton = document.createElement('button');
-        editButton.textContent = 'Edit';
-        editButton.onclick = () => editTodo(index);
-        
-        const deleteButton = document.createElement('button');
-        deleteButton.onclick = () => deleteTodo(index);
-        
-        li.appendChild(span);
-        li.appendChild(editButton);
-        li.appendChild(deleteButton);
-        
-        todoList.appendChild(li);
-    });
-}
-
-function renderHistory() {
-    historyList.innerHTML = '';
-    
-    history.forEach((todo, index) => {
-        const li = document.createElement('li');
-        const span = document.createElement('span');
-        span.textContent = todo;
-        
-        const deleteButton = document.createElement('button');
-        deleteButton.textContent = 'Delete Forever';
-        deleteButton.onclick = () => deleteFromHistory(index);
-        
-        li.appendChild(span);
-        li.appendChild(deleteButton);
-        
-        historyList.appendChild(li);
-    });
-}
-
-function deleteFromHistory(index) {
-    history.splice(index, 1);
-    renderHistory();
-}
+// Clear all tasks (Trash Bin)
+document.getElementById('clear-tasks').addEventListener('click', function () {
+    document.getElementById('task-list').innerHTML = '';
+});

@@ -5,119 +5,114 @@
 }
 
 body {
-    background-color: #121212;
-    font-family: 'Poppins', sans-serif;
-    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    overflow: hidden;
+    background-color: #dbe4f3; /* Updated to match soft light background */
+    font-family: 'Arial', sans-serif;
+    color: #000000; /* Change text color to black for readability */
 }
 
 .container {
-    background-color: #1e1e1e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.todo-app {
+    background-color: #192235; /* Darker background like the calculator in the image */
     padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
-    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Softer shadow for a clean look */
     text-align: center;
 }
 
-.title {
+.todo-app h1 {
+    margin-bottom: 20px;
     font-size: 2rem;
-    margin-bottom: 20px;
+    color: #ffffff; /* Keep the text white for contrast */
 }
 
-.subtitle {
-    font-size: 1.5rem;
-    margin-top: 30px;
-    margin-bottom: 10px;
-}
-
-.input-container {
+.input-group {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin-bottom: 20px;
 }
 
-input[type="text"] {
-    width: 70%;
+#new-task {
     padding: 10px;
-    border-radius: 10px;
+    width: 200px;
     border: none;
+    border-radius: 5px;
+    outline: none;
     font-size: 1rem;
+    background-color: #ffffff; /* Light input background */
+    color: #000000; /* Black text */
 }
 
-button {
-    background-color: #3b82f6;
-    color: #fff;
-    border: none;
+#add-task {
     padding: 10px 20px;
-    border-radius: 10px;
+    background-color: #1d72b8; /* Blue color to match button style */
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    color: #fff;
     cursor: pointer;
     font-size: 1rem;
     transition: background-color 0.3s;
 }
 
-button:hover {
-    background-color: #2563eb;
+#add-task:hover {
+    background-color: #155a8a; /* Darker hover effect for the button */
 }
 
-ul {
+#task-list {
     list-style-type: none;
     padding: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    margin-bottom: 20px;
 }
 
-li {
-    background-color: #292929;
-    padding: 15px;
-    border-radius: 10px;
+#task-list li {
+    background-color: #26374a; /* Darker task background similar to the calculator keys */
+    padding: 10px;
     margin-bottom: 10px;
+    border-radius: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 1rem;
+    color: #ffffff; /* Keep the text white for contrast */
     transition: background-color 0.3s;
 }
 
-li:hover {
-    background-color: #333;
+#task-list li:hover {
+    background-color: #3a4e65; /* Slightly lighter hover effect */
 }
 
-li span {
-    flex: 1;
-    margin-right: 10px;
-}
-
-li button {
-    background-color: #ef4444;
-    padding: 10px;
+#clear-tasks {
+    padding: 10px 20px;
+    background-color: #e6392d; /* Keep the red for clearing tasks */
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
+    color: #fff;
     cursor: pointer;
-    position: relative;
-    overflow: hidden;
+    font-size: 1rem;
+    transition: background-color 0.3s;
 }
 
-li button:hover {
-    background-color: #dc2626;
+#clear-tasks:hover {
+    background-color: #d32f2a; /* Slightly darker red for hover effect */
 }
 
-li button::before {
-    content: '🗑️';
-    position: absolute;
-    font-size: 1.5rem;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-li button:hover::before {
-    opacity: 1;
-}
-
-.history-list li {
-    background-color: #444;
+.delete-task {
+    background-color: transparent;
+    border: none;
+    color: #ff6666; /* Light red for the delete icon */
+    font-size: 1.2rem;
+    cursor: pointer;
 }
